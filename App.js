@@ -2,7 +2,6 @@ import { Slider } from "@miblanchard/react-native-slider";
 import React, { useRef, useState } from "react";
 import { View, StyleSheet, Animated, Button, Text, ScrollView, TouchableOpacity, Dimensions } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 class App extends React.Component {
 
@@ -52,7 +51,7 @@ class App extends React.Component {
     const {boxWidth, boxMargin, duration, height} = this.state;
 
     return (
-      <SafeAreaView>
+      <View>
         <TouchableOpacity style={{margin: 20}} onPress={() => { this.prepare(); this.animate() }}>
           <LinearGradient colors={['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082']} style={styles.button} start={{x: 0, y: 0}} end={{x: 1, y: 1}}>
             <View>
@@ -108,7 +107,7 @@ class App extends React.Component {
           </View>
           
         </ScrollView>
-      </SafeAreaView>
+      </View>
     )
   }
 }
